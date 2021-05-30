@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kodlamaio.hrms.business.abstracts.AuthService;
 import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.entities.concretes.Employer;
-import kodlamaio.hrms.entities.concretes.JobSeeker;
+import kodlamaio.hrms.entities.concretes.Jobseeker;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -29,7 +29,7 @@ public class AuthsController {
 	}
 	
 	@PostMapping("/registerJobseeker")
-	public Result registerJobseeker(@RequestBody JobSeeker jobseeker, String confirmPassword)
+	public Result registerJobseeker(@RequestBody Jobseeker jobseeker, String confirmPassword)
 	{
 		return authService.registerJobSeeker(jobseeker, confirmPassword);
 	}

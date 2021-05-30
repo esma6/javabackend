@@ -4,12 +4,12 @@ import java.util.List;
 
 import kodlamaio.hrms.core.utilities.results.DataResult;
 import kodlamaio.hrms.core.utilities.results.Result;
-import kodlamaio.hrms.entities.concretes.JobSeeker;
+import kodlamaio.hrms.entities.concretes.Jobseeker;
 
 public interface JobSeekerService {
 
-	Result add(JobSeeker jobseeker);	
-	DataResult<List<JobSeeker>> getAll();
-	DataResult<JobSeeker> getJobseekerByNationalId(String nationalId);
+	Result add(Jobseeker jobseeker);	
+	DataResult<List<Jobseeker>> getAll();
+	DataResult<Jobseeker> getJobseekerByNationalId(String nationalId);
 
 }

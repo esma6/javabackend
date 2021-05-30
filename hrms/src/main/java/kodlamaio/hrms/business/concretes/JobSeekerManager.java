@@ -11,7 +11,7 @@ import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.core.utilities.results.SuccessDataResult;
 import kodlamaio.hrms.core.utilities.results.SuccessResult;
 import kodlamaio.hrms.dataAccess.abstracts.JobSeekerDao;
-import kodlamaio.hrms.entities.concretes.JobSeeker;
+import kodlamaio.hrms.entities.concretes.Jobseeker;
 
 @Service
 public class JobSeekerManager implements JobSeekerService{
@@ -25,20 +25,20 @@ public class JobSeekerManager implements JobSeekerService{
 	}
 
 	@Override
-	public Result add(JobSeeker jobSeeker) {
+	public Result add(Jobseeker jobSeeker) {
 		this.jobSeekerDao.save(jobSeeker);
       return new SuccessResult("Jobseeker has been added.");
 	}
 
 
 	@Override
-	public DataResult<List<JobSeeker>> getAll() {
-		return new SuccessDataResult<List<JobSeeker>>(this.jobSeekerDao.findAll());
+	public DataResult<List<Jobseeker>> getAll() {
+		return new SuccessDataResult<List<Jobseeker>>(this.jobSeekerDao.findAll());
 	}
 
 	@Override
-	public DataResult<JobSeeker> getJobseekerByNationalId(String nationalId) {
-		return new SuccessDataResult<JobSeeker>(this.jobSeekerDao.findJobseekerByNationalId(nationalId));
+	public DataResult<Jobseeker> getJobseekerByNationalId(String nationalId) {
+		return new SuccessDataResult<Jobseeker>(this.jobSeekerDao.findJobseekerByNationalId(nationalId));
 	}
 
 }

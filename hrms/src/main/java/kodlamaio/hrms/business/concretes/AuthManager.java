@@ -16,7 +16,7 @@ import kodlamaio.hrms.core.utilities.results.Result;
 import kodlamaio.hrms.core.utilities.results.SuccessResult;
 import kodlamaio.hrms.core.utilities.verification.VerificationService;
 import kodlamaio.hrms.entities.concretes.Employer;
-import kodlamaio.hrms.entities.concretes.JobSeeker;
+import kodlamaio.hrms.entities.concretes.Jobseeker;
 import kodlamaio.hrms.entities.concretes.VerificationCode;
 
 @Service
@@ -74,7 +74,7 @@ public class AuthManager implements AuthService {
 	}
 
 	@Override
-	public Result registerJobSeeker(JobSeeker jobseeker, String confirmPassword) {
+	public Result registerJobSeeker(Jobseeker jobseeker, String confirmPassword) {
 
 		if (checkIfRealPerson(Long.parseLong(jobseeker.getNationalId()), jobseeker.getFirstName(),
 				jobseeker.getLastName(), jobseeker.getDateOfBirth().getYear()) == false) {
@@ -130,7 +130,7 @@ public class AuthManager implements AuthService {
 	}
 
 	
-	private boolean checkIfNullInfoForJobseeker(JobSeeker jobseeker, String confirmPassword) {
+	private boolean checkIfNullInfoForJobseeker(Jobseeker jobseeker, String confirmPassword) {
 
 		if (jobseeker.getFirstName() != null && jobseeker.getLastName() != null && jobseeker.getNationalId() != null
 				&& jobseeker.getDateOfBirth() != null && jobseeker.getPassword() != null && jobseeker.getEmail() != null

@@ -12,12 +12,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "job_seekers")
+@Table(name = "jobseekers")
 @Data
 @PrimaryKeyJoinColumn(name = "user_id")
 @AllArgsConstructor
 @NoArgsConstructor
-public class JobSeeker extends User{
+public class Jobseeker extends User{
 
 //	@Id
 //	@GeneratedValue
